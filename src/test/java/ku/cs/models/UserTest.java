@@ -23,4 +23,12 @@ class UserTest {
         boolean actual = user.validatePassword("plain-p@ssw0rd");
         assertTrue(actual);
     }
+    @Test
+    @DisplayName("Set password should update the password")
+    public void testSetPassword() {
+        User user = new User("user01", "old-p@ssw0rd");
+        user.setPassword("new-p@ssw0rd");
+        boolean actual = user.validatePassword("new-p@ssw0rd");
+        assertTrue(actual);
+    }
 }
